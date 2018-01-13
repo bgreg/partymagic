@@ -1,0 +1,90 @@
+<% if notice %>
+  <p class="alert alert-info notice"><%= notice %></p>
+<% end %>
+
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Parties</h1>
+      <hr />
+      <ol>
+        <li>
+          <% party = Party.first %>
+          <% if party %>
+            <div class="well">
+              <h4><%= party.title %></h4>
+              <p><b>Description:</b>  <%= party.description %>         </p>
+              <p><b>Start time:</b>   <%= party.start_time %>          </p>
+              <p><b>End time:</b>     <%= party.end_time %>            </p>
+              <p><b>Location:</b>     <%= party.location %>            </p>
+              <p><b>Contact info:</b> <%= party.contact_information %> </p>
+            </div>
+
+            <div class="well">
+              <h4>RSVP counts</h4>
+              <p>
+                Yes: <span class="label label-default"><%= party.guests.where(going: true).count %> </span>
+              </p>
+              <p>
+                No:  <span class="label label-default"><%= party.guests.where(going: false).count %></span>
+              </p>
+            </div>
+
+            <div class="well">
+              <h4>Guests</h4>
+              <ol>
+                <% party.guests.each do |guest| %>
+                  <li>
+                    <b><%= guest.name %>, <%= guest.email %></b>
+                    <span class="label label-default"><%= if guest.going? then "Yes" else "No" end %></span>
+                    <div>
+                      <small>invite link:</small>
+                      <%= link_to invitation_url(guest.invitation.secret_id), invitation_url(guest.invitation.secret_id) %>
+                    </div>
+                  </li>
+                <% end %>
+              </ol>
+            </div>
+
+            <div class="well">
+              <h4>Add a guest</h4>
+              <%= form_for(@guest) do |form| %>
+                <% if @guest.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
+
+                    <ul>
+                      <% @guest.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <div class="field">
+                  <%= form.label :name %>
+                  <%= form.text_field :name, required: true %>
+                </div>
+
+                <div class="field">
+                  <%= form.label :email %>
+                  <%= form.email_field :email, required: true %>
+                </div>
+
+                <%= form.hidden_field :party_id, value: party.id %>
+
+                <div class="actions">
+                  <%= form.submit "Add Guest", class: "btn btn-primary" %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

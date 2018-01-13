@@ -1,0 +1,2 @@
+module PartyHostHelper
+end

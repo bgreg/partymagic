@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  get 'flyer/index'
+  namespace :admin do
+    resources :users
+    resources :guests
+    resources :invitations
+    resources :parties
+    root to: "users#index"
+  end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+  resources :party_host, only: [:index]
+  resources :flyer, only: [:index]
+  resources :guests
+  resources :invitations, only: [:show]
 end
