@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "party_host#index"
   namespace :admin do
     resources :users
     resources :guests
