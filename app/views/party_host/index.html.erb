@@ -43,7 +43,8 @@
                     <span class="label label-default"><%= if guest.going? then "Yes" else "No" end %></span>
                     <div>
                       <small>invite link:</small>
-                      <%= link_to invitation_url(guest.invitation.secret_id), invitation_url(guest.invitation.secret_id) %>
+                      <% link = LinkBuilder.new(guest).magic_link %>
+                      <%= link_to link, link %>
                     </div>
                   </li>
                 <% end %>

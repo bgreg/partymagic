@@ -47,3 +47,4 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem 'devise'
 gem "administrate"
+gem "sendgrid-ruby"
