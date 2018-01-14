@@ -7,6 +7,6 @@ class Invitation < ApplicationRecord
     invitation = new(guest: guest)
     invitation.secret_id = SecureRandom.uuid
     invitation.save!
-    # send email
+		InvitationMailer.new_invitation(guest).deliver_now
   end
 end
