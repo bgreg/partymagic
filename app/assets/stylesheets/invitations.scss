@@ -4,22 +4,18 @@
 //
 
 .invitation-container {
-  position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-  background-color: black;
   color: white;
 }
-
-.image-container {
-  height: 600px;
-  width: 300px;
+body{
+  background-color:black;
 }
-
+h1 {
+  color: white;
+}
 .message-container{
   color: white;
+  width: 300px;
+
 }
 
 .force-left{
