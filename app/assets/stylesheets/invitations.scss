@@ -18,15 +18,20 @@ h1 {
 
 }
 
-.force-left{
-  position: absolute;
-  left: 0;
-  top: 0px;
-  // z-index: -1;
+.dance-floor{
+  margin-top: 100px;
 }
 
-.force-right{
+#violet1, #violet2 {
+	-webkit-animation-duration: 3s;
+	-webkit-animation-delay: 0s;
+	// -webkit-animation-iteration-count: infinite;
+}
+
+.force-left{
   position: absolute;
-  right: 0;
-  top: 0px;
+  width: 400px;
+  left: 10px;
+  top: 10px;
+  z-index: 4;
 }

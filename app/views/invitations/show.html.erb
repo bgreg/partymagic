@@ -2,37 +2,46 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <%= image_tag("violet2.png", class: "img-circle force-left") %>
-        <%= image_tag("disco-ball.gif", size: "200x200", class: "center-block") %>
-        <%= image_tag("violet1.png", class: "img-circle force-right") %>
+        <audio class="pull-right" controls autoplay>
+          <source src="/jungle.mp3"> </source>
+        </audio>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-lg-4"> </div>
-      <div class="col-lg-4 text-center">
-        <%# <div class="message-container text-center"> %>
+      <div class="force-left text-center animated slideInUp">
           <% party = @guest.party %>
-          <h3>Hello <%= @guest.name.chomp %>!</h3>
+          <h3 class="animated flash">Hey <%= @guest.name.chomp %>!</h3>
           <h3> You are invited to the <%= party.title %></h3>
 
           <p><%= party.description %>         </p>
           <p><b>Starts at:</b>   <%= party.start_time.strftime("%A, %B %d, %I:%M:%S, %Y")  %>          </p>
           <p><b>Location:</b>     <%= party.location %>            </p>
           <p><b>Contact info:</b> <%= party.contact_information %> </p>
-        <%# </div> %>
-      </div>
-      <div class="col-lg-4"> </div>
-    </div>
+        <% if @guest.going? %>
+          <h2>See you there!</h2>
+          <br>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <%= image_tag("dancefloor.gif", class: "center-block") %>
-      </div>
-    </div>
+          <small>Need to changed your mind?</small>
+        <%= form_for(@guest) do |form| %>
+          <% if @guest.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@guest.errors.count, "error") %> prohibited this invitation from being saved:</h2>
+              <ul>
+                <% @guest.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-    <div class="row">
-      <div class="col-lg-12 text-center">
+          <div class="field">
+            <%= form.hidden_field :going, value: 0 %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "I can't make it now", class: "btn btn-xs btn-danger" %>
+          </div>
+        <% end %>
+        <% else %>
         <h1>Are You In?</h1>
           <%= form_for(@guest) do |form| %>
             <% if @guest.errors.any? %>
@@ -76,7 +85,30 @@
             <%= form.submit "No", class: "btn btn-xs btn-danger" %>
           </div>
         <% end %>
+        <% end %>
       </div>
-  </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <%= image_tag("disco-ball.gif", size: "450x450", class: "center-block animated fadeIn disco-ball") %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+        <%= image_tag("violet2.png", id: "violet2", size:"350x500", class: "img-rounded animated fadeInRightBig pull-left") %>
+        <%= image_tag("violet1.png", id: "violet1", size:"350x500", class: "img-rounded animated fadeInLeftBig pull-right") %>
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
+
+    <div class="row dance-floor">
+      <div class="col-lg-12">
+        <%= image_tag("dancefloor.gif", class: "center-block") %>
+      </div>
+    </div>
+
 </div>
 </div>
+
