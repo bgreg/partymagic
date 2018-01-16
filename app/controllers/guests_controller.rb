@@ -1,4 +1,6 @@
 class GuestsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:update]
+
   def create
     @guest = Guest.new(guest_params)
 
