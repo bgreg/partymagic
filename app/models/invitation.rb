@@ -9,4 +9,10 @@ class Invitation < ApplicationRecord
     invitation.save!
 		InvitationMailer.new_invitation(guest).deliver_now
   end
+
+  def self.resend_to_all_no_responses
+    Party.first.guests.where(going: false).each do |guest|
+      InvitationMailer.new_invitation(guest).deliver_now
+    end
+  end
 end

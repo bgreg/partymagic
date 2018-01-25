@@ -1,0 +1,69 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddAdminToUsers	db/migrate/20180113220250_add_admin_to_users.rb	/^class AddAdminToUsers < ActiveRecord::Migration[5.1]$/;"	c
+AddEmailToGuests	db/migrate/20180112013852_add_email_to_guests.rb	/^class AddEmailToGuests < ActiveRecord::Migration[5.1]$/;"	c
+Admin	app/controllers/admin/application_controller.rb	/^module Admin$/;"	m
+Admin	app/controllers/admin/guests_controller.rb	/^module Admin$/;"	m
+Admin	app/controllers/admin/invitations_controller.rb	/^module Admin$/;"	m
+Admin	app/controllers/admin/parties_controller.rb	/^module Admin$/;"	m
+Admin	app/controllers/admin/users_controller.rb	/^module Admin$/;"	m
+Admin	app/helpers/admin/dashboard_helper.rb	/^module Admin::DashboardHelper$/;"	m
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:PartyMagic
+ApplicationController	app/controllers/admin/application_controller.rb	/^  class ApplicationController < Administrate::ApplicationController$/;"	c	class:Admin
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+CreateGuests	db/migrate/20180112001258_create_guests.rb	/^class CreateGuests < ActiveRecord::Migration[5.1]$/;"	c
+CreateInvitations	db/migrate/20180112012527_create_invitations.rb	/^class CreateInvitations < ActiveRecord::Migration[5.1]$/;"	c
+CreateParties	db/migrate/20180112000654_create_parties.rb	/^class CreateParties < ActiveRecord::Migration[5.1]$/;"	c
+DeviseCreateUsers	db/migrate/20180113002520_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration[5.1]$/;"	c
+FlyerController	app/controllers/flyer_controller.rb	/^class FlyerController < ApplicationController$/;"	c
+FlyerHelper	app/helpers/flyer_helper.rb	/^module FlyerHelper$/;"	m
+Guest	app/models/guest.rb	/^class Guest < ApplicationRecord$/;"	c
+GuestDashboard	app/dashboards/guest_dashboard.rb	/^class GuestDashboard < Administrate::BaseDashboard$/;"	c
+GuestsController	app/controllers/admin/guests_controller.rb	/^  class GuestsController < Admin::ApplicationController$/;"	c	class:Admin
+GuestsController	app/controllers/guests_controller.rb	/^class GuestsController < ApplicationController$/;"	c
+Invitation	app/models/invitation.rb	/^class Invitation < ApplicationRecord$/;"	c
+InvitationDashboard	app/dashboards/invitation_dashboard.rb	/^class InvitationDashboard < Administrate::BaseDashboard$/;"	c
+InvitationHelper	app/helpers/invitation_helper.rb	/^module InvitationHelper$/;"	m
+InvitationMailer	app/mailers/invitation_mailer.rb	/^class InvitationMailer < ApplicationMailer$/;"	c
+InvitationsController	app/controllers/admin/invitations_controller.rb	/^  class InvitationsController < Admin::ApplicationController$/;"	c	class:Admin
+InvitationsController	app/controllers/invitations_controller.rb	/^class InvitationsController < ApplicationController$/;"	c
+InvitationsHelper	app/helpers/invitations_helper.rb	/^module InvitationsHelper$/;"	m
+LinkBuilder	app/elements/link_builder.rb	/^class LinkBuilder$/;"	c
+PartiesController	app/controllers/admin/parties_controller.rb	/^  class PartiesController < Admin::ApplicationController$/;"	c	class:Admin
+Party	app/models/party.rb	/^class Party < ApplicationRecord$/;"	c
+PartyDashboard	app/dashboards/party_dashboard.rb	/^class PartyDashboard < Administrate::BaseDashboard$/;"	c
+PartyHostController	app/controllers/party_host_controller.rb	/^class PartyHostController < ApplicationController$/;"	c
+PartyHostHelper	app/helpers/party_host_helper.rb	/^module PartyHostHelper$/;"	m
+PartyMagic	config/application.rb	/^module PartyMagic$/;"	m
+User	app/models/user.rb	/^class User < ApplicationRecord$/;"	c
+UserDashboard	app/dashboards/user_dashboard.rb	/^class UserDashboard < Administrate::BaseDashboard$/;"	c
+UsersController	app/controllers/admin/users_controller.rb	/^  class UsersController < Admin::ApplicationController$/;"	c	class:Admin
+authenticate_admin	app/controllers/admin/application_controller.rb	/^    def authenticate_admin$/;"	f	class:Admin.ApplicationController
+change	db/migrate/20180112000654_create_parties.rb	/^  def change$/;"	f	class:CreateParties
+change	db/migrate/20180112001258_create_guests.rb	/^  def change$/;"	f	class:CreateGuests
+change	db/migrate/20180112012527_create_invitations.rb	/^  def change$/;"	f	class:CreateInvitations
+change	db/migrate/20180112013852_add_email_to_guests.rb	/^  def change$/;"	f	class:AddEmailToGuests
+change	db/migrate/20180113002520_devise_create_users.rb	/^  def change$/;"	f	class:DeviseCreateUsers
+change	db/migrate/20180113220250_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
+create	app/controllers/guests_controller.rb	/^  def create$/;"	f	class:GuestsController
+create_for	app/models/invitation.rb	/^  def self.create_for(guest)$/;"	F	class:Invitation
+guest_params	app/controllers/guests_controller.rb	/^  def guest_params$/;"	f	class:GuestsController
+index	app/controllers/flyer_controller.rb	/^  def index$/;"	f	class:FlyerController
+index	app/controllers/party_host_controller.rb	/^  def index$/;"	f	class:PartyHostController
+initialize	app/elements/link_builder.rb	/^  def initialize(guest)$/;"	f	class:LinkBuilder
+magic_link	app/elements/link_builder.rb	/^  def magic_link$/;"	f	class:LinkBuilder
+magic_link	app/models/guest.rb	/^  def magic_link$/;"	f	class:Guest
+new_invitation	app/mailers/invitation_mailer.rb	/^  def new_invitation(guest)$/;"	f	class:InvitationMailer
+resend_to_all_no_responses	app/models/invitation.rb	/^  def self.resend_to_all_no_responses$/;"	F	class:Invitation
+show	app/controllers/invitations_controller.rb	/^  def show$/;"	f	class:InvitationsController
+system!	bin/setup	/^def system!(*args)$/;"	f
+system!	bin/update	/^def system!(*args)$/;"	f
+update	app/controllers/guests_controller.rb	/^  def update$/;"	f	class:GuestsController
