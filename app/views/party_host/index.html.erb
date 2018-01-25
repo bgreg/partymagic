@@ -1,3 +1,4 @@
+<% party = Party.first %>
 <% if notice %>
   <p class="alert alert-info notice"><%= notice %></p>
 <% end %>
@@ -10,8 +11,8 @@
   <div class="row">
     <div class="col-lg-12">
       <br>
-
       <%= link_to "Admin Panel", admin_users_path, class: "btn btn-primary pull-right"%>
+      <%= mail_to party.guests.map(&:email).join(","), "Email All the Guests", subject: "Don't be late to the disco", class: "btn btn-primary pull-right" %>
     </div>
   </div>
   <div class="row">
@@ -20,7 +21,6 @@
       <hr />
       <ol>
         <li>
-          <% party = Party.first %>
           <% if party %>
             <div class="well">
               <h4><%= party.title %></h4>
@@ -89,6 +89,8 @@
                   <%= form.submit "Add Guest", class: "btn btn-primary" %>
                 </div>
               <% end %>
+
+
             </div>
           <% end %>
         </li>
