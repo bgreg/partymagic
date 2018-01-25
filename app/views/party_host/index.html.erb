@@ -12,7 +12,24 @@
     <div class="col-lg-12">
       <br>
       <%= link_to "Admin Panel", admin_users_path, class: "btn btn-primary pull-right"%>
-      <%= mail_to party.guests.map(&:email).join(","), "Email All the Guests", subject: "Don't be late to the disco", class: "btn btn-primary pull-right" %>
+
+      <%= mail_to party.guests.map(&:email).join(","),
+        "Email All the Guests",
+        subject: party.title,
+        class: "btn btn-primary pull-right"
+      %>
+
+      <%= mail_to party.guests.where(going: :false).map(&:email).join(","),
+        "Email All No",
+        subject: party.title,
+        class: "btn btn-primary pull-right"
+      %>
+
+      <%= mail_to party.guests.where(going: :true).map(&:email).join(","),
+        "Email All Yes",
+        subject: party.title,
+        class: "btn btn-primary pull-right"
+      %>
     </div>
   </div>
   <div class="row">
